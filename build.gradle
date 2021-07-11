@@ -13,6 +13,12 @@ repositories {
 }
 
 dependencies {
+    // db 의존성 추가
+    // implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // runtimeOnly 'mysql:mysql-connector-java'
+    compileOnly 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compileOnly 'mysql:mysql-connector-java'
+
     // 롬복 디펜던시 추가
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
