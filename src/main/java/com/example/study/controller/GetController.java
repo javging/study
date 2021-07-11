@@ -45,4 +45,10 @@ public class GetController {
         // {"account": "abcd", "email":"study@gmail.com", "page":1}
         return searchParam;
     }
+
+    // Rest 개념에서 주로 삭제할때, get방식처럼 주소에 매개변수 넣어서 사용함
+    @DeleteMapping("/user")
+    public void delete() {
+    }
+
 }
