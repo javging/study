@@ -5,13 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 // import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 // import javax.persistence.Table;
-import javax.persistence.Id;
+
 
 @Data
 @AllArgsConstructor
@@ -31,5 +30,10 @@ public class User {
   private String createdBy;
   private LocalDateTime updatedAt;
   private String updatedBy;
+
+  // 유저 입장에서
+  // 1(유저):N(오더디테일)
+  @OneToMany(fetch = FetchType.LAZY, mappedBy = "user") // OrderDetail 안에 있는 user 라는 변수에 매칭시키겠다,,,
+  private List<OrderDetail> orderDetailList;
 
 }
